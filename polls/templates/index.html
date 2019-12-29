@@ -1,0 +1,9 @@
+{% if school_list %}
+    <ul>
+    {% for school in school_list %}
+        <li><a href="/polls/{{ school.id }}/">{{ school.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
