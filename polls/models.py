@@ -9,9 +9,15 @@ class School(models.Model):
     area = models.CharField(max_length=20)
     buildtime = models.DateTimeField('date published')
 
+    def __str__(self):
+        return self.name
+
 
 class Student(models.Model):
     name = models.CharField(max_length=20)
     age = models.IntegerField(default=10)
     sex = models.CharField(max_length=10)
     school = models.ForeignKey(School,on_delete=None)
+
+    def __str__(self):
+        return self.name
